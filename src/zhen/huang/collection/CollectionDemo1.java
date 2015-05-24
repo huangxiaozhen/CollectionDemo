@@ -120,6 +120,20 @@ public class CollectionDemo1
 			System.out.println("++" + iterator.next());
 		}
 		
+		//方法四 使用增强 FOR 循环
+		for( Object object : collection4 )
+		{
+			System.out.println("%%" + object);
+		}
+		
+		//15. 数组中使用增加 for 循环
+		String[] strings = new String[]{"AA","BB","CC"};
+		for(String string : strings)
+		{
+			System.out.println(string);
+		}
+		
+		
 
 	}
 }
