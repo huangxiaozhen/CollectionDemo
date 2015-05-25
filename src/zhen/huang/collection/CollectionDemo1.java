@@ -132,8 +132,5 @@ public class CollectionDemo1
 		{
 			System.out.println(string);
 		}
-		
-		
-
 	}
 }
