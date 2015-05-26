@@ -1,6 +1,6 @@
 package zhen.huang.object;
 
-public class Person
+public class Person implements Comparable<Person>
 {
 	@Override
 	public int hashCode()
@@ -38,7 +38,7 @@ public class Person
 	}
 
 	private String name;
-	
+
 	private Integer age;
 
 	public String getName()
@@ -78,7 +78,26 @@ public class Person
 	{
 		return "Person [name=" + name + ", age=" + age + "]";
 	}
+
+	// 进行同一个对象之间的比较 为什么需要进行同一对象间的比较，因为在 TreeSet 中
+	// 加入的时候是要判断元素的位置，元素的位置就是和之前已经存在的元素进行比较，判断
+	// 谁大谁小，然后放在准备的位置。 如何进行判断，是要自己定义
 	
-	
+	// 向 treeset 中添加对象时，根据 compareto 进行属性比较，如果返回 0 ，虽然代表这两个对象的仅仅属性值相同
+	// 但是程序认为 这两个对象相同，后一个对象不能加入
+
+	// compareTo hashcode equals 三者最好保持一致
+	@Override
+	public int compareTo(Person person)
+	{
+		int temp = this.age.compareTo(person.age);
+		if (temp == 0)
+		{
+			return this.name.compareTo(person.name);
+		}
+		
+		return temp;
+		
+	}
 
 }
