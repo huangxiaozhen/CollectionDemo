@@ -64,24 +64,6 @@ public class SetDemo1
 			System.out.println("^^" + iterator.next());
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
